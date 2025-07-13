@@ -1,0 +1,17 @@
+import axios from 'axios'
+
+const BASE_URL = 'http://localhost:3030/api/v1'
+
+const api = axios.create({
+  baseURL: BASE_URL,
+})
+
+api.interceptors.request.use((config) => {
+  const token = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
+
+export default api
