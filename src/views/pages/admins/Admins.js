@@ -25,6 +25,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilZoom, cilTrash, cilPlus, cilPencil } from '@coreui/icons'
+import { useNavigate } from 'react-router-dom'
 import {
   fetchAdmins,
   createAdmin,
@@ -53,9 +54,15 @@ const Admins = () => {
     phoneNumber: '',
   })
 
+  const navigate = useNavigate()
+
   useEffect(() => {
+    if (!localStorage.getItem('accessToken')) {
+      navigate('/login')
+      return
+    }
     loadAdmins()
-  }, [])
+  }, [navigate])
 
   const loadAdmins = async () => {
     setLoading(true)

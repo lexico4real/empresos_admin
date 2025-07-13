@@ -16,6 +16,8 @@ import { cilCloudDownload } from '@coreui/icons'
 import WidgetsBrand from '../../widgets/WidgetsBrand'
 import WidgetsDropdown from '../../widgets/WidgetsDropdown'
 import MainChart from './MainChart'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Dashboard = () => {
   const progressExample = [
@@ -25,6 +27,15 @@ const Dashboard = () => {
     { title: 'New Admins', value: '22.123 Users', percent: 80, color: 'danger' },
     { title: 'New Customers', value: 'Average Rate', percent: 40.15, color: 'primary' },
   ]
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken')
+    if (!token) {
+      navigate('/login')
+    }
+  }, [navigate])
 
   return (
     <>

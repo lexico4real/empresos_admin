@@ -14,7 +14,7 @@ import {
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { requestLoginOtp, loginWithOtp } from '../../../lib/auth'
 
@@ -28,6 +28,13 @@ const Login = () => {
   const [step, setStep] = useState(1)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken')
+    if (token) {
+      navigate('/dashboard')
+    }
+  }, [navigate])
 
   const handleRequestOtp = async (e) => {
     e.preventDefault()

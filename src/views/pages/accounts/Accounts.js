@@ -25,6 +25,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilPencil } from '@coreui/icons'
+import { useNavigate } from 'react-router-dom'
 import api from '../../../lib/api'
 
 const CreditAccounts = () => {
@@ -38,9 +39,15 @@ const CreditAccounts = () => {
   const [totalPages, setTotalPages] = useState(1)
   const itemsPerPage = 10
 
+  const navigate = useNavigate()
+
   useEffect(() => {
+    if (!localStorage.getItem('accessToken')) {
+      navigate('/login')
+      return
+    }
     fetchAccounts(currentPage)
-  }, [currentPage])
+  }, [currentPage, navigate])
 
   const fetchAccounts = async (page) => {
     setLoading(true)
