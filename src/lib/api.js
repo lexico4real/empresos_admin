@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = import.meta.env.VITE_API_BASE_URL
+const baseUrl = 'http://185.113.249.225:3030/api/v1'
 
 const BASE_URL = baseUrl
 
