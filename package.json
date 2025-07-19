@@ -8,7 +8,7 @@
     "url": ""
   },
   "license": "MIT",
-  "author": "Empresos",
+  "author": "Empresas",
   "scripts": {
     "build": "vite build",
     "lint": "eslint",

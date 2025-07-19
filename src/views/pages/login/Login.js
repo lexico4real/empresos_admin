@@ -73,7 +73,7 @@ const Login = () => {
               <CCard className="p-4 shadow-sm border-danger">
                 <CCardBody>
                   <CForm onSubmit={step === 1 ? handleRequestOtp : handleLogin}>
-                    <h1 className="text-danger">Empresos Admin</h1>
+                    <h1 className="text-danger">Empresas Admin</h1>
                     <p className="text-body-secondary">Sign In to your account</p>
 
                     <CInputGroup className="mb-3">

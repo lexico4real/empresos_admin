@@ -6,7 +6,7 @@ const AppFooter = () => {
     <CFooter className="px-4">
       <div>
         <a href="#" target="_blank" rel="noopener noreferrer">
-          Empresos
+          Empresas
         </a>
         <span className="ms-1">&copy; 2025</span>
       </div>
