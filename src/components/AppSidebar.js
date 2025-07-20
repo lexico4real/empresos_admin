@@ -38,7 +38,7 @@ const AppSidebar = () => {
             <span
               style={{ fontSize: '20px', fontWeight: 700, color: '#f00', textDecoration: 'none' }}
             >
-              Empresas PORTAL
+              Admin
             </span>
           </div>
         </CSidebarBrand>
