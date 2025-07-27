@@ -6,6 +6,7 @@ const Customers = React.lazy(() => import('./views/pages/customers/Customers'))
 const Admins = React.lazy(() => import('./views/pages/admins/Admins'))
 const CreditAccount = React.lazy(() => import('./views/pages/accounts/Accounts'))
 const Configurations = React.lazy(() => import('./views/pages/configurations/Configurations'))
+const Transfers = React.lazy(() => import('./views/pages/transactions/Transfers'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -17,6 +18,8 @@ const routes = [
   { path: '/settings', name: 'Settings', element: CreditAccount, exact: true },
   { path: '/settings/accounts', name: 'Accounts', element: CreditAccount },
   { path: '/settings/configurations', name: 'Configurations', element: Configurations },
+  { path: '/transactions', name: 'Transactions', element: Transfers, exact: true },
+  { path: '/transactions/transfers', name: 'Transfers', element: Transfers },
 ]
 
 export default routes

@@ -1,5 +1,12 @@
 import CIcon from '@coreui/icons-react'
-import { cilUser, cilShieldAlt, cilSpeedometer, cilGroup, cilCog } from '@coreui/icons'
+import {
+  cilUser,
+  cilShieldAlt,
+  cilSpeedometer,
+  cilGroup,
+  cilCog,
+  cilSwapHorizontal,
+} from '@coreui/icons'
 import { CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
@@ -24,6 +31,16 @@ const _nav = [
     name: 'Admins',
     to: '/users/admins',
     icon: <CIcon icon={cilShieldAlt} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavTitle,
+    name: 'Transactions',
+  },
+  {
+    component: CNavItem,
+    name: 'Transfers',
+    to: '/transactions/transfers',
+    icon: <CIcon icon={cilSwapHorizontal} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,

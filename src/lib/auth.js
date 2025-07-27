@@ -1,7 +1,7 @@
 import api from './api'
 
 export async function requestLoginOtp(email, password) {
-  const res = await api.post('/users/otp', { email, password })
+  const res = await api.post('/users/otp-admin', { email, password })
   const secret = res.data?.secret
   return secret
 }
